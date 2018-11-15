@@ -1,5 +1,5 @@
 !pip install matplotlib
-import matplotlib as mp
+#import matplotlib as mp
 
 import pandas as pd
 
@@ -11,3 +11,8 @@ print('\n'.join(sys.path))
 
 Names = ['Pete Davis','Richard Dunn','Jessica Rabbit','Mike Miers']
 print(Names)
+
+for x in Names:
+    print(x)
+
+a = "a"
