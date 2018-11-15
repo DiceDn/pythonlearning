@@ -16,3 +16,8 @@ for x in Names:
     print(x)
 
 a = "a"
+
+def add(a, b):
+    return a + b
+
+add(1,2)
