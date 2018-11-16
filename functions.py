@@ -21,3 +21,9 @@ def add(a, b):
     return a + b
 
 add(1,2)
+
+dict = {'jeff':37,'pete':54,'amy':54}
+
+for x in dict:
+    print(x + ' ' + str(dict[x]))
+    
