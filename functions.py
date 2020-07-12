@@ -1,29 +1,41 @@
-!pip install matplotlib
-#import matplotlib as mp
+from decorators import timer
+#from decorators import *
+from math import factorial
 
-import pandas as pd
-
-
-
-
-import sys
-print('\n'.join(sys.path))
-
-Names = ['Pete Davis','Richard Dunn','Jessica Rabbit','Mike Miers']
-print(Names)
-
-for x in Names:
-    print(x)
-
-a = "a"
-
+@timer
 def add(a, b):
+    '''adds inputs'''
     return a + b
 
-add(1,2)
+print(add(1,2))
 
-dict = {'jeff':37,'pete':54,'amy':54}
+def mult(a, b):
+    return a * b
 
-for x in dict:
-    print(x + ' ' + str(dict[x]))
-    
+print(mult(3,4))
+
+#Functions are 1st class objects:
+#list example and pythonic strategy design pattern:
+
+#Can be assigned to other objects
+add_new = add
+print(add_new(5,6))
+
+#ie. They can be used as arguments just like any other objects 
+# (string, int, float, list etc).
+list_1 = [add, mult]
+
+print(list_1[0](5,5))
+
+for f in list_1:
+    print(f(3,4))
+
+# how to decorate third party function:
+# normal use of function:
+fact_test = factorial(10)
+print(f'factorial test result: {fact_test}')
+
+# decorated function:
+fact = timer(factorial)
+fact_test = fact(10)
+print(f'factorial test result: {fact_test}')
